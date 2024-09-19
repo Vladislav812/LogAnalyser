@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import static java.lang.Math.*;
 
 public class DrawingSpots extends JFrame {
-  double multiplicator = 1;
+  double multiplicator = 2.5;
   double frameX = multiplicator * 22 * 3 * 4, frameY = multiplicator * 22 * 4 * 4;
   ArrayList<Spot> spots;
 
   public DrawingSpots(ArrayList<Spot> spots) {
     setTitle("Irradiation Session ID:");
-    setSize(1000, 500);
+    setSize((int) (multiplicator*1000), (int) (multiplicator*500));
     setVisible(true);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     this.spots = spots;
@@ -36,17 +36,8 @@ public class DrawingSpots extends JFrame {
       g2D.draw(spot);
       g2D.setColor(getLayerColor(spots.get(i)));
       //g2D.fill(spot);
-
-
-
+      
      // int ISOx =
-
-
-
-
-
-
-
 
       try {
         Thread.currentThread().sleep(Math.round(1000 * spots.get(i).irradiationDuration));
